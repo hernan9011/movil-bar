@@ -1,0 +1,244 @@
+.section-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.body-gallery {
+    display: flex;
+    width: 100%;
+    position: relative;
+    height: 180px;
+    margin-top: 1em;
+}
+
+.footer-gallery {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.letter-gallery {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgb(0 0 0 / 1), rgb(0 0 0 / 0.25));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+}
+
+.letter-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    height: 100%;
+}
+
+.slider{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+.slider li {
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+
+.pagination {
+    top: 102%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.pagination li {
+    font-size: 20px;
+    margin: 2px 5px;
+    color: #858585;
+    cursor: pointer;
+}
+
+.left,
+.right {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    z-index: 1;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+.text-gallery {
+    display: flex;
+    flex-direction: column;
+    filter:drop-shadow(black 2px 4px 6px);
+    backdrop-filter: blur(1px);
+}
+
+.button-gallery{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-c {
+    height: 60%;
+    color: #000;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+    font-family: inherit;
+    line-height: inherit;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    background-color: #ffa600;
+    border-color: #ffa600;
+    text-transform: none;
+    padding: 0;
+    overflow: visible;
+  }
+
+
+
+
+
+
+
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-gallery {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 55%;
+    background-color: #fff;
+    gap: 0.5em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+
+
+.container-body-gallery {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+     padding: 1em;
+    overflow: hidden;
+}
+
+.section-gallery-one{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 75%;
+}
+
+.section-gallery-two{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    border-left: 1px solid black;
+    padding-left: 0.5em;
+    overflow-y: auto;
+}
+
+.div-item{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.btn_close_gral {
+    height: 2em;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+    background: black;
+    align-items: baseline;
+}
+
+.close-gallery {
+    color: #fff;
+    font-size: 15px !important;
+    font-weight: bold; 
+    background: rgb(196, 15, 15);
+    border-radius: 50%;
+    border: none;
+    padding: 0.5em;
+}
+
+.close-gallery:hover,
+.close-gallery:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+.modal-gallery h1 {
+    font-size: 1.7em;
+    margin:0;
+    font-weight: bolder;
+}
+.modal-gallery h3 {
+    font-size: 1.8em;
+    margin:0;
+    color: black;
+    font-weight: bolder;
+}
+
+.modal-gallery img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.modal-gallery p {
+    font-size: 1.25em;
+    margin-bottom: 10px;
+}
+

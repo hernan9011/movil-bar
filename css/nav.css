@@ -1,0 +1,101 @@
+.nav-top {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    color: #ffa600;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-button {
+    padding: 8px 16px;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0;
+}
+
+.nav-logo {
+    height: 52px;
+    width: 120px;
+    background-image: url("/img/log2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 1em;
+}
+
+.nav-search {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-ul {
+    display: flex;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-ul .nav-button {
+    font-weight: bold;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+a:hover {
+    outline: 0;
+}
+
+.nav-ul:hover {
+    color: #ffa600;
+    background-color: #ffffff;
+}
+
+.nav-button:hover {
+    color: #000;
+    background-color: #ffa600;
+}
+
+
+
+.nav-search {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    color: #000;
+    font-size: 1.3em;
+    font-family: inherit;
+    line-height: inherit;
+}
+
+.input-search {
+    width: 50%;
+    height: 60%;
+}
+
+.btn-search {
+    height: 70%;
+    width: 12%;
+}

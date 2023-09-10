@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/img/site.webmanifest">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/section.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" 
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+      <script defer src="../js/jquery-3.1.0.min.js"></script> 
+      <script defer type="module" src="../js/menu.js"></script>
+ 
+   
+</head>
+
+<body>
+    <header class="nav-top ">
+        <nav class="nav-bar">
+            <a href="/index.html" class="nav-logo"></a>
+            <div class="nav-search">
+                <input id="input-search" class="input-search" type="text" placeholder="Nombre de tu plato favorito">
+                <button id="btn-search" class="btn-c btn-search">Buscar</button>  
+            </div>   
+        </nav>
+    </header>
+
+    <section id="menu" class="section-menu">
+        <div class="menu-container">
+            <div class="option-merchandise">
+                <h4>Categoría</h4>
+                <select id="type" class="option-search">
+                        <option value="">TODO</option>
+                        <option value="1">ENTRADA</option>
+                        <option value="2">MINUTAS</option>
+                        <option value="3">PASTAS</option>
+                        <option value="4">PARRILLA</option>
+                        <option value="5">PIZZAS</option>
+                        <option value="6">SANDWICH</option>
+                        <option value="7">ENSALADAS</option>
+                        <option value="8">BEBIDAS</option>
+                        <option value="7">ENSALADAS</option>
+                        <option value="8">BEBIDAS</option>
+                        <option value="9">CERVEZA ARTESANAL</option>
+                        <option value="10">POSTRES</option>
+                </select>
+                <h4>Orden</h4>
+                <select id="order" class="option-search">
+                        <option value="asc">ASC</option>
+                        <option value="desc">DESC</option>
+                </select>  
+                <h4>Precio</h4>
+                <div class="input-precie">
+                    <input id="min" type="number" placeholder="mínimo" class="option-search opt_two">               
+                    <input id="max" type="number" placeholder="máximo" class="option-search opt_two">
+                </div>
+            </div>         
+            <div class="list-merchandise">
+                <div id="body-merchandise" class="body-merchandise">
+                </div>        
+                <div class="body-footer">
+                    <button class="left">
+                        <span class="fa fa-chevron-left"></span>
+                    </button>                                       
+                    <ol id="pag-items" class="pagination">                                      
+                    </ol>   
+                    <button class="right">
+                        <span class="fa fa-chevron-right"></span>
+                    </button>             
+                </div>
+            </div>
+            <div class="list-command">
+                <div class="command-header">
+                    <h3>Orden</h3>
+                </div>
+                <div id="command-body" class="command-body">
+                    <div id="select-delivery" class="from-command" style="visibility:hidden; gap: 1em;">
+                        <h5 class="Name">Elije forma de Entrega </h5>
+                        <label class="option-delivery">
+                            <input type="radio" id="radio1" name="status" value="1" checked>Salon<br> </label>
+                        <label class="option-delivery">
+                            <input type="radio" id="radio2" name="status" value="2">Delivery<br></label>
+                        <label class="option-delivery">
+                            <input type="radio" id="radio3" name="status" value="3">Pedido Ya<br></label>
+                    </div>
+                </div>
+                <div class="div-mensajes">
+                    <p>Precio Total:</p><p>0</p>
+                </div>                          
+                <div id="footer-command" class="footer-command">
+                    <button id="btn-command" class="btn-c" style="width: 30%;">Continuar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto" class="section-footer">          
+        <div class="grupo-1">
+            <h2>Síguenos</h2> 
+            <div class="red-social">
+                <a href="https://www.linkedin.com/in/hern%C3%A1n-rodriguez-455573244/" class="fa fa-linkedin" target="_blank" aria-hidden="true"></a>       
+                <a href="https://www.instagram.com/hernankkw/" class="fa fa-instagram" target="_blank" aria-hidden="true"></a>                       
+                <a href="mailto:hernan.ar98@gmail.com" class="fa fa-envelope" target="_blank" aria-hidden="true"></a>
+                <a href="https://github.com/hernan9011" class="fa fa-github" target="_blank" aria-hidden="true"></a>
+            </div> 
+            <ul class="footer-politics">
+                <a href="/aviso-legal"><li>Aviso legal</li></a>
+                <a href="/politica-de-privacidad"><li>Política de privacidad</li></a>
+                <a href="/politica-de-cookies"><li>Política de cookies</li></a>
+            </ul>           
+        </div>       
+        <div class="grupo-2">
+            <small>© 2023 <b>Hernan Rodriguez</b> - Todos los Derechos Reservados.</small>
+        </div>
+    </footer>
+
+</body>
+
+</html>
