@@ -61,17 +61,34 @@ select:focus>option:checked {
   width: 12%;
 }
 
-.profile-img {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.text-merchandise {
+  color:#fff;
+  filter:drop-shadow(black 2px 4px 6px);
+  text-shadow: 0 0 1px #fff;
+  font-size: 1.8em;
 }
 
-.text-merchandise {
+.img-merchandise {
   display: flex;
   flex-direction: column;
   padding: 0.5em;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(1.5);
 }
+
+#list {
+  font-size: 1.25em;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+  font-weight: 600;
+  margin: 0;
+  color: #141414;
+}
+
+
+
 .text-merchandise-two {
   display: flex;
   flex-direction: row;
@@ -133,7 +150,7 @@ select:focus>option:checked {
 
 .menu-container {
   display: grid;
-  grid-template-columns: 0.8fr 3fr 1.5fr;
+  grid-template-columns: 0.8fr 3fr 0.8fr;
   height: 90%;
   width: 95%;
   overflow: hidden;
@@ -225,7 +242,6 @@ select:focus>option:checked {
   cursor: pointer;
   background: transparent;
   border: none;
-  z-index: 1;
 }
 
 .left {
@@ -283,11 +299,10 @@ select:focus>option:checked {
   padding: 0.5em;
   border-radius: 10px;
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75);
-  height: 230px;
+  height: 220px;
   width: 200px;
   ;
 }
-
 
 
 
@@ -295,76 +310,6 @@ select:focus>option:checked {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid #ccc !important;
-}
-
-.command-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 10%;
-  padding: 0.2rem;
-  background-color: #000;
-}
-
-.command-body {
-  display: flex;
-  flex-direction: column;
-  height: 75%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  padding: 0.5em;
-  gap: 5px;
-  background-color: #fff;
-  position: relative;
-}
-
-.letter-command {
-  display: grid;
-  grid-template-columns: 3fr 0.5fr;
-  padding: 0.5em;
-  border-radius: 10px;
-  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75);
-  align-items: center;
-  gap: 0.5em;
-}
-
-.from-command {
-  height: 100%;
-  width: 100%;
-  top: 0%;
-  left: 0%;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: aliceblue;
-}
-
-.option-delivery {
-  display: flex;
-  align-items: center;
-  width: 50%;
-  padding-left: 10%;
-  padding: 0.5em;
-  gap: 1em;
-  border-radius: 10px;
-  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75);
-  font-size: 1.5em;
-  margin: 0;
-  color: #000;
-}
-
-.footer-command {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 10%;
-  padding-left: 1em;
-  padding-right: 1em;
-  gap: 5px;
-  background-color: #000;
 }
 
 
