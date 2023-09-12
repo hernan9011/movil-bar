@@ -38,8 +38,7 @@ window.onload = () => {
     document.getElementById("btn-search").addEventListener('click', () => {
         location.href ="../../search.html";
         const name = document.getElementById("input-search").value;      
-        renderMerchandise("", name, "asc");
-        console.log("aaaaa")
+        localStorage.setItem("search", name);
     });
     renderImage();
 } 

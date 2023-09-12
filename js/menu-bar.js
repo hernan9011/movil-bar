@@ -1,7 +1,6 @@
 import { letter_Merchandise } from "../js/export-bar.js"
 import { modal_Gallery } from "../js/export-bar.js"
 
-renderMerchandise("");
 
 export async function renderMerchandise(name) {
     try {
@@ -14,7 +13,7 @@ export async function renderMerchandise(name) {
         }
         const Merchandise = await response.json();
         const listMerchandise = $('#body-merchandise').empty();
-        const incrementBy = 6;
+        const incrementBy = 9;
         let itemCount = 0;
         const totalPag = Math.ceil(Merchandise.drinks.length / incrementBy);
         for (let i = 0; i < totalPag; i++) {
@@ -147,3 +146,21 @@ document.getElementById("btn-search").addEventListener('click', () => {
     const name = document.getElementById("input-search").value;
     renderMerchandise(name);
 });
+
+document.getElementById("input-search").addEventListener("keypress", (event) => {
+    if (event.key === "Enter"){
+        const name = document.getElementById("input-search").value;
+        renderMerchandise(name);
+    }
+  });
+
+const name = localStorage.getItem("search");
+
+if(name){
+    renderMerchandise(localStorage.getItem("search"));
+    localStorage.removeItem("search");
+}
+else{
+    renderMerchandise("");
+}
+

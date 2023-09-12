@@ -27,11 +27,12 @@
 .nav-logo {
     height: 52px;
     width: 120px;
-    background-image: url("/img/log2.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     margin-left: 1em;
+    font-size: 2.5em;
+    text-decoration: none;
 }
 
 .nav-search {
@@ -93,6 +94,7 @@ input {
 .input-search {
     width: 50%;
     height: 60%;
+    font-weight: bold;
 }
 
 .btn-search {
