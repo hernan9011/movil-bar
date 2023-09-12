@@ -16,6 +16,7 @@ async function merchandiseFetch() {
     }
 }
 
+
 async function renderMerchandise(Merchandise) {
     const listMerchandise = document.getElementById('body-gallery-merchandise');
     const totalItems = 4;
