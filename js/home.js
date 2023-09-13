@@ -2,9 +2,9 @@
 window.onload = () => {
     // Variables
     const IMAGES = [ 
-         '../img/image_4.jpg',
-        '../img/image_1.jpg',
-        '../img/image_2.jpg'
+         '../img/bebidas-refrescantes.jpg',
+        '../img/bebidas-refrescantes.jpg',
+        '../img/bebidas-refrescantes.jpg'
     ];
     let actualPosition = 0;
     const buttonBack = document.querySelector('#back');
