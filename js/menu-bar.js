@@ -17,7 +17,7 @@ export async function renderMerchandise(name) {
         let itemCount = 0;
         const totalPag = Math.ceil(Merchandise.drinks.length / incrementBy);
         for (let i = 0; i < totalPag; i++) {
-            const divMayor = $('<div>').attr('id', `pag-${i}`).addClass('slider-one');
+            const divMayor = $('<ul>').attr('id', `pag-${i}`).addClass('slider-one');
             listMerchandise.append(divMayor);
             const itemCountLimit = Math.min(itemCount + incrementBy, Merchandise.drinks.length);
             for (; itemCount < itemCountLimit; itemCount++) {
@@ -32,7 +32,7 @@ export async function renderMerchandise(name) {
 }
 
 function createMerchantLetter(Merchandise) {
-    const letter = document.createElement('div');
+    const letter = document.createElement('li');
     const idDrink = Merchandise.idDrink;
     letter.id = `Merchandise-${idDrink}`;
     letter.classList.add('letter-merchandise');
@@ -119,7 +119,7 @@ async function generateMerchandiseModal(ID) {
         }
         const data = await response.json();
         const merchandise = data.drinks[0];
-        const modalContainer = document.createElement("div");
+        const modalContainer = document.createElement('dialog');
         modalContainer.classList.add("modal-container");
         modalContainer.innerHTML += modal_Gallery(data.drinks[0]);
         document.body.append(modalContainer);
