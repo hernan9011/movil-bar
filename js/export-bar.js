@@ -13,12 +13,12 @@ export const letter_Merchandise = (Merchandise) => {
 
 export const modal_Gallery = (Merchandise) => {
     return`   
-    <div class="modal-gallery">
-        <div class="btn_close_gral">
+    <article class="modal-gallery">
+        <section class="btn_close_gral">
             <p style="color: white;margin:0;">${Merchandise.strCategory} > ${Merchandise.strDrink}</p>
             <span class="material-symbols-outlined close-gallery">close</span>	
-        </div>
-        <div class="container-body-gallery">
+        </section>
+        <section class="container-body-gallery">
             <div class="section-gallery-one">
                 <div >              
                     <h1>${Merchandise.strDrink}</h1>
@@ -35,6 +35,6 @@ export const modal_Gallery = (Merchandise) => {
                     <p><em style="color:#ffa600;">Preparación:</em> ${Merchandise.strInstructions}</p> 
                 </div>          
             </div>
-        </div>
-    </div>`
+        </section>
+    </article>`
 }

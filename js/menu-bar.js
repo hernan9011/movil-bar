@@ -1,7 +1,6 @@
 import { letter_Merchandise } from "../js/export-bar.js"
 import { modal_Gallery } from "../js/export-bar.js"
 
-renderMerchandise("");
 
 export async function renderMerchandise(name) {
     try {
@@ -14,11 +13,11 @@ export async function renderMerchandise(name) {
         }
         const Merchandise = await response.json();
         const listMerchandise = $('#body-merchandise').empty();
-        const incrementBy = 6;
+        const incrementBy = 9;
         let itemCount = 0;
         const totalPag = Math.ceil(Merchandise.drinks.length / incrementBy);
         for (let i = 0; i < totalPag; i++) {
-            const divMayor = $('<div>').attr('id', `pag-${i}`).addClass('slider-one');
+            const divMayor = $('<ul>').attr('id', `pag-${i}`).addClass('slider-one');
             listMerchandise.append(divMayor);
             const itemCountLimit = Math.min(itemCount + incrementBy, Merchandise.drinks.length);
             for (; itemCount < itemCountLimit; itemCount++) {
@@ -33,7 +32,7 @@ export async function renderMerchandise(name) {
 }
 
 function createMerchantLetter(Merchandise) {
-    const letter = document.createElement('div');
+    const letter = document.createElement('li');
     const idDrink = Merchandise.idDrink;
     letter.id = `Merchandise-${idDrink}`;
     letter.classList.add('letter-merchandise');
@@ -120,7 +119,7 @@ async function generateMerchandiseModal(ID) {
         }
         const data = await response.json();
         const merchandise = data.drinks[0];
-        const modalContainer = document.createElement("div");
+        const modalContainer = document.createElement('dialog');
         modalContainer.classList.add("modal-container");
         modalContainer.innerHTML += modal_Gallery(data.drinks[0]);
         document.body.append(modalContainer);
@@ -147,3 +146,21 @@ document.getElementById("btn-search").addEventListener('click', () => {
     const name = document.getElementById("input-search").value;
     renderMerchandise(name);
 });
+
+document.getElementById("input-search").addEventListener("keypress", (event) => {
+    if (event.key === "Enter"){
+        const name = document.getElementById("input-search").value;
+        renderMerchandise(name);
+    }
+  });
+
+const name = localStorage.getItem("search");
+
+if(name){
+    renderMerchandise(localStorage.getItem("search"));
+    localStorage.removeItem("search");
+}
+else{
+    renderMerchandise("");
+}
+
