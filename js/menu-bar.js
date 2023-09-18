@@ -31,6 +31,7 @@ export async function renderMerchandise(name) {
     }
 }
 
+
 function createMerchantLetter(Merchandise) {
     const letter = document.createElement('li');
     const idDrink = Merchandise.idDrink;
