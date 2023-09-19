@@ -92,6 +92,22 @@ a:hover {
 }
 
 .btn-search {
-    height: 70%;
-    width: 12%;
+    width: 12% !important;
 }
+
+
+
+
+@media (max-width: 459px) and (min-width: 30px) {
+    /* Estilos para dispositivos móviles */
+    .nav-search {
+        justify-content: end;
+        margin-right: 1em;
+    }
+
+    .btn-search {
+        width: 20% !important;
+    }
+  }
+
+

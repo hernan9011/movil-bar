@@ -44,57 +44,45 @@ function addEvento(idDrink) {
 
 
 let imgPos = 1;
+$('.right span').click(nextSlider);
+$('.left span').click(prevSlider);
 
 function NumeroDePag() {
-    const list = document.getElementById('pag-items');
-    list.innerHTML = "";
-    const imgItems = document.getElementsByClassName('slider-one').length;
-    for (let i = 1; i <= imgItems; i++) {
+    $('#pag-items').empty();
+    imgPos = 1;
+    for (let i = 1; i <= $('.slider-one').length; i++) {
         $('.pagination').append(`<li><span>${i}</span></li>`);
     }
 
     $('.slider-one').hide();
     $('.slider-one:first').show();
     $('.pagination li:first').css({ 'color': '#CD6E2E' });
-
     $('.pagination li').click(pagination);
-    $('.right span').click(nextSlider);
-    $('.left span').click(prevSlider);
 }
 
 function pagination() {
     const paginationPos = $(this).index() + 1;
-
     $('.slider-one').hide()
     $(`.slider-one:nth-child(${paginationPos})`).fadeIn();
-
     $('.pagination li').css({ 'color': '#858585' });
     $(this).css({ 'color': '#CD6E2E' });
-
     imgPos = paginationPos;
 }
 
 function nextSlider() {
-    const imgItems = document.getElementsByClassName('slider-one').length;
-    if (imgPos >= imgItems) { imgPos = 1; }
+    if (imgPos >= $('.slider-one').length) { imgPos = 1; }
     else { imgPos++; }
-
     $('.pagination li').css({ 'color': '#858585' });
     $(`.pagination li:nth-child(${imgPos})`).css({ 'color': '#CD6E2E' });
-
     $('.slider-one').hide();
     $(`.slider-one:nth-child(${imgPos})`).fadeIn();
-
 }
 
 function prevSlider() {
-    const imgItems = document.getElementsByClassName('slider-one').length;
-    if (imgPos <= 1) { imgPos = imgItems; }
+    if (imgPos <= 1) { imgPos = $('.slider-one').length }
     else { imgPos--; }
-
     $('.pagination li').css({ 'color': '#858585' });
     $(`.pagination li:nth-child(${imgPos})`).css({ 'color': '#CD6E2E' });
-
     $('.slider-one').hide();
     $(`.slider-one:nth-child(${imgPos})`).fadeIn();
 }
@@ -107,23 +95,17 @@ async function generateMerchandiseModal(ID) {
         if (!response.ok) {
             throw new Error('Merchandise information could not be obtained');
         }
-        const data = await response.json();
-        const merchandise = data.drinks[0];
-        const modalContainer = document.createElement('dialog');
-        modalContainer.classList.add("modal-container");
-        modalContainer.innerHTML += modal_Gallery(data.drinks[0]);
-        document.body.append(modalContainer);
-        $(document.querySelector('.close-gallery')).on('click', () => { modalContainer.remove(); });
-        const list = $('#list');
+        const data = await response.json(); 
+        const modalContainer = $('<dialog>').addClass('container-modal').html(modal_Gallery(data.drinks[0]));
+        $('body').append(modalContainer);
+        $('.close').on('click', () => { modalContainer.remove(); });
+       
         for (let i = 1; i <= 15; i++) {
-            const ingredientKey = `strIngredient${i}`;
-            const measureKey = `strMeasure${i}`;
-            const ingredientValue = merchandise[ingredientKey];
-            const measureValue = merchandise[measureKey];
+            const ingredientValue = data.drinks[0][`strIngredient${i}`];
+            const measureValue = data.drinks[0][`strMeasure${i}`];
             if (ingredientValue) {
                 const text = measureValue ? `${measureValue} ${ingredientValue}` : ingredientValue;
-                const listItem = $('<li>').text(text);
-                list.append(listItem);
+                 $('#list').append($('<li>').text(text));
             }
         }
     } catch (error) {
@@ -132,21 +114,17 @@ async function generateMerchandiseModal(ID) {
 }
 
 function Alert(message) {
-    const alertDiv = document.createElement("div");
-    alertDiv.textContent = message;
-    alertDiv.style.backgroundColor = "red";
-    alertDiv.style.color = "white";
-    alertDiv.style.borderRadius = "5px";
-    alertDiv.style.position = "absolute";
-    alertDiv.style.top = `${window.pageYOffset + event.clientY - 60}px`;
-    alertDiv.style.left = `${event.clientX}px`;
-    alertDiv.style.width = "100px"
-    alertDiv.style.padding = "5px"
-    document.body.appendChild(alertDiv);
-    setTimeout(() => {
-        alertDiv.parentNode.removeChild(alertDiv);
-    }, 500);
-}
+    const alertDiv = $('<div>').text(message);
+    alertDiv.css({
+      backgroundColor: 'red', color: 'white',
+      borderRadius: '5px', position: 'absolute',
+      top: `${window.pageYOffset + event.clientY - 60}px`,
+      left: `${event.clientX}px`,
+      width: '100px', padding: '5px'
+    });
+    $('body').append(alertDiv);
+    setTimeout(() => { alertDiv.remove(); }, 500);
+  }
 
 
 document.getElementById("btn-search").addEventListener('click', () => {

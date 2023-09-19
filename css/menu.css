@@ -1,6 +1,7 @@
 /*elementos*/
-.btn-c {
-  height: 60%;
+.btn-c { 
+  width: 100%;
+  height: 100%;
   color: #000;
   font-size: 1.3em;
   font-weight: bold;
@@ -18,22 +19,9 @@
   overflow: visible;
 }
 
-.btnAdd {
-  width: 100%;
-  height: 50%;
-  font-size: 1.3em;
-}
-
 .btn-info{
-  width: 100%;
-  height: 100%;
   color: #ffa600;
   background-color: #000;
-}
-
-.btn-search {
-  height: 70%;
-  width: 12%;
 }
 
 .text-merchandise {
@@ -189,3 +177,33 @@
   padding: 1em;
 }
 
+
+
+@media (min-width: 741px) and (max-width: 1224px) {
+  /* Estilos para tabletas */
+  .public{
+    display: none;
+  }
+  .menu-container{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+@media (max-width: 741px) and (min-width: 30px) {
+  /* Estilos para dispositivos móviles */
+   /* Estilos para tabletas */
+   .public{
+    display: none;
+  }
+  .menu-container{
+    grid-template-columns: 1fr;
+  }
+  .letter-merchandise {
+    height: 260px;
+    width: 240px;
+    ;
+  }
+
+}
