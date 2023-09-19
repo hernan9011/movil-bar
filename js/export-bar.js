@@ -38,3 +38,21 @@ export const modal_Gallery = (Merchandise) => {
         </section>
     </article>`
 }
+
+
+export const modal_History = () => {
+    return`   
+    <details id="record">
+        <summary style="font-size: 1.3em;"><strong>HISTORIAL</strong></summary>
+    </details>
+    <details id="favorite">
+        <summary style="font-size: 1.3em;"><strong>FAVORITO</strong></summary>
+    </details>`
+}
+
+export const letter_History = (Merchandise) => {
+    return `
+    <img src="${Merchandise.strDrinkThumb}" alt="${Merchandise.strDrink}" style="height:50px;">
+    <h5>${Merchandise.strDrink} </h5>
+    `
+}

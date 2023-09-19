@@ -110,91 +110,56 @@
 
 
 
+.container-history {
+  position: fixed;
+  left: 10px;
+  bottom: 5px;
+  width: 250px;
+  height: min-content;
+  max-height: 80%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  padding: 0.5em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#record {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  margin-bottom: 1em;
+}
+
+#favorite {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.letter-history{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  gap:30px;
+  padding: 0.5em;
+  font-size: 1.7em;
+  border: 1px solid #ccc;
+  margin-bottom: 0.1em;
+}
 
 
-
-
-
-
-
-
-
-
-.container-ticket {
-    display: flex;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-  
-  .modal-ticket {
-    display: flex;
-    flex-direction: column;
-    background-color: #fefefe;
-    justify-content: center;
-    border: 1px solid #888;
-    width: 35%;
-    height: min-content;
-    max-height: 60%;
-    overflow: hidden;
-    font-size: larger;
-  }
-  
-  .ticket-flex{
-    padding: 0.5em;
-  }
-  
-  .close-ticket {
-    color: #fff;
-    font-size: 15px !important;
-    font-weight: bold; 
-    background: rgb(196, 15, 15);
-    border-radius: 50%;
-    border: none;
-    padding: 0.5em;
-  }
-  
-  .close-ticket:hover,
-  .close-ticket:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .item {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  
-  .close-gallery2 {
-    color: #fff;
-    font-size: 15px !important;
-    font-weight: bold; 
-    background: rgb(196, 15, 15);
-    border-radius: 50%;
-    border: none;
-    padding: 0.5em;
-  }
-  
-  .close-gallery2:hover,
-  .close-gallery2:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .div-mensajes{
-    display: flex;
-    height: 5%;
-    padding: 0.5em;
-    justify-content: space-between;
-    background-color: #ffa600;
-  }

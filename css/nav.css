@@ -12,7 +12,9 @@
 .nav-bar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    height: 52px;
 }
 
 .nav-button {
@@ -25,21 +27,15 @@
 }
 
 .nav-logo {
+    position: absolute;
     height: 52px;
     width: 120px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin-left: 1em;
+    margin-left: 0.5em;
     font-size: 2.5em;
     text-decoration: none;
-}
-
-.nav-search {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
 }
 
 .nav-ul {
@@ -77,6 +73,7 @@ a:hover {
 
 
 
+
 .nav-search {
     display: flex;
     width: 100%;
@@ -84,17 +81,14 @@ a:hover {
     justify-content: center;
 }
 
-input {
+.input-search {
+    width: 45%;
+    height: 60%;
+    font-weight: bold;
     color: #000;
     font-size: 1.3em;
     font-family: inherit;
     line-height: inherit;
-}
-
-.input-search {
-    width: 50%;
-    height: 60%;
-    font-weight: bold;
 }
 
 .btn-search {
