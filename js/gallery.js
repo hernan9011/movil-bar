@@ -10,7 +10,9 @@ async function merchandiseFetch() {
             throw new Error('Merchandise information could not be obtained');
         }
         const data = await response.json();
-        renderMerchandise(data)
+        renderMerchandise(data);
+        console.log(data)
+        
     } catch (error) {
         console.error('Error obtaining merchandise data', error);
     }

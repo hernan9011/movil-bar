@@ -27,6 +27,7 @@ async function renderMerchandise(name) {
 }
 
 
+
 function addEvento(idDrink) {
     $(`#button-info-${idDrink}`).on('click', () => {
         añadirHistorial(idDrink);

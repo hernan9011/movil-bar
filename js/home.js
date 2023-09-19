@@ -1,7 +1,7 @@
 
 window.onload = () => {
     // Variables
-    const IMAGES = ['../img/image_4.jpg'];
+    const IMAGES = ['../img/bebidas-refrescantes.jpg'];
     const image = document.querySelector('#image');
   
     function renderImage() {
