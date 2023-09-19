@@ -1,28 +1,23 @@
-import { letter_Merchandise } from "../js/export-bar.js"
-import { modal_Gallery } from "../js/export-bar.js"
+import { letter_Merchandise, modal_Gallery } from "../js/export-bar.js"
+import { añadirHistorial,añadirFavorito  } from "./storage.js"
 
-
-export async function renderMerchandise(name) {
+async function renderMerchandise(name) {
     try {
         const API_URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php';
-        const response = await fetch(`${API_URL}?s=${name}`, {
-            method: 'GET'
-        });
+        const response = await fetch(`${API_URL}?s=${name}`, { method: 'GET' });
         if (!response.ok) {
-            throw new Error('Error obtaining Merchandise');
-        }
+            throw new Error('Error obtaining Merchandise');}
         const Merchandise = await response.json();
-        const listMerchandise = $('#body-merchandise').empty();
-        const incrementBy = 9;
-        let itemCount = 0;
-        const totalPag = Math.ceil(Merchandise.drinks.length / incrementBy);
-        for (let i = 0; i < totalPag; i++) {
+        $('#body-merchandise').empty();
+        for (let i = 0; i < Math.ceil(Merchandise.drinks.length / 9); i++) {
             const divMayor = $('<ul>').attr('id', `pag-${i}`).addClass('slider-one');
-            listMerchandise.append(divMayor);
-            const itemCountLimit = Math.min(itemCount + incrementBy, Merchandise.drinks.length);
-            for (; itemCount < itemCountLimit; itemCount++) {
-                const letter = createMerchantLetter(Merchandise.drinks[itemCount]);
+            $('#body-merchandise').append(divMayor);
+            for (let itemCount = i * 9; itemCount < Math.min(i * 9 + 9, Merchandise.drinks.length); itemCount++) {
+                const Merchandise2 = Merchandise.drinks[itemCount];
+                const letter = $('<li>').attr('id', `Merchandise-${Merchandise2.idDrink}`).addClass('letter-merchandise');
+                letter.html(letter_Merchandise(Merchandise2));
                 divMayor.append(letter);
+                addEvento(Merchandise2.idDrink);
             }
         }
         NumeroDePag();
@@ -31,26 +26,21 @@ export async function renderMerchandise(name) {
     }
 }
 
-function createMerchantLetter(Merchandise) {
-    const letter = document.createElement('li');
-    const idDrink = Merchandise.idDrink;
-    letter.id = `Merchandise-${idDrink}`;
-    letter.classList.add('letter-merchandise');
-    letter.innerHTML = letter_Merchandise(Merchandise);
-    const buttonMas = letter.querySelector(`#button-info-${idDrink}`);
-    buttonMas.addEventListener('click', () => {  generateMerchandiseModal(idDrink); });
-    const button = letter.querySelector(`#button-${idDrink}`);
-    button.addEventListener('click', () => {
-        const command = document.getElementById(`command-${event.target.value}`);
+
+function addEvento(idDrink) {
+    $(`#button-info-${idDrink}`).on('click', () => {
+        añadirHistorial(idDrink);
+        generateMerchandiseModal(idDrink);
+    });
+    $(`#button-${idDrink}`).on('click', () => {
+        const command = document.getElementById(`favorite-${event.target.value}`);
         if (command) {
-            Alert("Ya existe el elemento en la comanda");
+            Alert("Ya existe el elemento en favorito");
         } else {
-            console.log("botón favorito");
+            añadirFavorito(event.target.value);
         }
     });
-    return letter;
 }
-
 
 
 let imgPos = 1;
@@ -59,7 +49,7 @@ function NumeroDePag() {
     const list = document.getElementById('pag-items');
     list.innerHTML = "";
     const imgItems = document.getElementsByClassName('slider-one').length;
-    for (var i = 1; i <= imgItems; i++) {
+    for (let i = 1; i <= imgItems; i++) {
         $('.pagination').append(`<li><span>${i}</span></li>`);
     }
 
@@ -141,6 +131,23 @@ async function generateMerchandiseModal(ID) {
     }
 }
 
+function Alert(message) {
+    const alertDiv = document.createElement("div");
+    alertDiv.textContent = message;
+    alertDiv.style.backgroundColor = "red";
+    alertDiv.style.color = "white";
+    alertDiv.style.borderRadius = "5px";
+    alertDiv.style.position = "absolute";
+    alertDiv.style.top = `${window.pageYOffset + event.clientY - 60}px`;
+    alertDiv.style.left = `${event.clientX}px`;
+    alertDiv.style.width = "100px"
+    alertDiv.style.padding = "5px"
+    document.body.appendChild(alertDiv);
+    setTimeout(() => {
+        alertDiv.parentNode.removeChild(alertDiv);
+    }, 500);
+}
+
 
 document.getElementById("btn-search").addEventListener('click', () => {
     const name = document.getElementById("input-search").value;
@@ -148,19 +155,19 @@ document.getElementById("btn-search").addEventListener('click', () => {
 });
 
 document.getElementById("input-search").addEventListener("keypress", (event) => {
-    if (event.key === "Enter"){
+    if (event.key === "Enter") {
         const name = document.getElementById("input-search").value;
         renderMerchandise(name);
     }
-  });
+});
 
 const name = localStorage.getItem("search");
 
-if(name){
+if (name) {
     renderMerchandise(localStorage.getItem("search"));
     localStorage.removeItem("search");
 }
-else{
+else {
     renderMerchandise("");
 }
 
