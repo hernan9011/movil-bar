@@ -1,12 +1,13 @@
 import { letter_Merchandise, modal_Gallery } from "../js/export-bar.js"
-import { añadirHistorial,añadirFavorito  } from "./storage.js"
+import { añadirHistorial, añadirFavorito } from "./storage.js"
 
 async function renderMerchandise(name) {
     try {
         const API_URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php';
         const response = await fetch(`${API_URL}?s=${name}`, { method: 'GET' });
         if (!response.ok) {
-            throw new Error('Error obtaining Merchandise');}
+            throw new Error('Error obtaining Merchandise');
+        }
         const Merchandise = await response.json();
         $('#body-merchandise').empty();
         for (let i = 0; i < Math.ceil(Merchandise.drinks.length / 9); i++) {
@@ -21,12 +22,21 @@ async function renderMerchandise(name) {
             }
         }
         NumeroDePag();
+        buttonEliminar(); 
     } catch (error) {
         console.error(error.message);
     }
 }
 
-
+function buttonEliminar() {
+    const miArray = JSON.parse(localStorage.getItem('favorito'));
+    miArray.forEach((item) => {
+        if($(`#button-${item}`)){
+            $(`#button-${item}`).text('Eliminar');
+            $(`#button-${item}`).css({ backgroundColor: 'red', color: 'white' });
+        }
+    });
+}
 
 function addEvento(idDrink) {
     $(`#button-info-${idDrink}`).on('click', () => {
@@ -34,12 +44,19 @@ function addEvento(idDrink) {
         generateMerchandiseModal(idDrink);
     });
     $(`#button-${idDrink}`).on('click', () => {
-        const command = document.getElementById(`favorite-${event.target.value}`);
-        if (command) {
-            Alert("Ya existe el elemento en favorito");
-        } else {
-            añadirFavorito(event.target.value);
+        const currentText = $(`#button-${idDrink}`).text();
+        // Cambiar el texto del botón al texto opuesto
+        if (currentText === 'Añadir a Favorito') {
+            $(`#button-${idDrink}`).text('Eliminar');
+            $(`#button-${idDrink}`).css({ backgroundColor: 'red', color: 'white' });
+            añadirFavorito(idDrink);
+            return;
         }
+        $(`#button-${idDrink}`).text('Añadir a Favorito');
+        $(`#button-${idDrink}`).css({ backgroundColor: '#ffa600', color: '#000' });
+        $(`#favorite-${idDrink}`).remove();
+        localStorage.setItem('favorito', JSON.stringify(JSON.parse(localStorage.getItem('favorito'))
+        .filter(elemento => elemento !== idDrink)));
     });
 }
 
@@ -96,37 +113,23 @@ async function generateMerchandiseModal(ID) {
         if (!response.ok) {
             throw new Error('Merchandise information could not be obtained');
         }
-        const data = await response.json(); 
+        const data = await response.json();
         const modalContainer = $('<dialog>').addClass('container-modal').html(modal_Gallery(data.drinks[0]));
         $('body').append(modalContainer);
         $('.close').on('click', () => { modalContainer.remove(); });
-       
+
         for (let i = 1; i <= 15; i++) {
             const ingredientValue = data.drinks[0][`strIngredient${i}`];
             const measureValue = data.drinks[0][`strMeasure${i}`];
             if (ingredientValue) {
                 const text = measureValue ? `${measureValue} ${ingredientValue}` : ingredientValue;
-                 $('#list').append($('<li>').text(text));
+                $('#list').append($('<li>').text(text));
             }
         }
     } catch (error) {
         console.error('Error obtaining merchandise data', error);
     }
 }
-
-function Alert(message) {
-    const alertDiv = $('<div>').text(message);
-    alertDiv.css({
-      backgroundColor: 'red', color: 'white',
-      borderRadius: '5px', position: 'absolute',
-      top: `${window.pageYOffset + event.clientY - 60}px`,
-      left: `${event.clientX}px`,
-      width: '100px', padding: '5px'
-    });
-    $('body').append(alertDiv);
-    setTimeout(() => { alertDiv.remove(); }, 500);
-  }
-
 
 document.getElementById("btn-search").addEventListener('click', () => {
     const name = document.getElementById("input-search").value;
@@ -150,3 +153,7 @@ else {
     renderMerchandise("");
 }
 
+setInterval(() => {
+    buttonEliminar(); 
+ }, 1000);
+ 

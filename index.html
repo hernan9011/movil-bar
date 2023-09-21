@@ -18,9 +18,10 @@
     <script defer src="../js/jquery-3.1.0.min.js"></script>
     <script defer src="../js/mapa.js"></script>
     <script defer src="../js/home.js"></script>
-    <script defer type= "module" src="../js/menu-bar.js"></script>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?"></script>
+    <script defer type="module" src="../js/gallery.js"></script>  
     <script defer type="module" src="../js/storage.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?"></script>
+  
 
 </head>
 
@@ -29,53 +30,45 @@
         <nav class="nav-bar">
             <a href="/index.html" class="nav-logo">LOGO</a>
             <div class="nav-search">
-                <input id="input-search" class="input-search" type="text" placeholder="Nombre de tu plato favorito">
+                <input id="input-search" class="input-search" type="text" placeholder="Nombre de tu bebida favorita">
                 <button id="btn-search" class="btn-c btn-search">Buscar</button>  
             </div>
             <ul class="nav-ul">
                 <li><a href="#galery" class="nav-button">GALERÍA</a></li>
-                <li><a href="#menu" class="nav-button">ORDENAR</a></li>
-                 <li><a href="#about" class="nav-button">SOBRE NOSOTROS</a></li>
-                <li> <a href="#comanda" class="nav-button">COMANDAS</a></li>
+                <li><a href="#about" class="nav-button">MAPA</a></li>
+                <li><a href="#contacto" class="nav-button">CONTACTO</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="section-home">
         <div id="image" class="body-home">
-            <img class="img-photo" alt="Restaurant">
-            <a href="/search.html" class="btn-home">Ordenar</a>
+            <a href="/search.html" class="btn-home">Buscar</a>
         </div>
     </section>
 
-    <section id="galery" class="section-gallery">
-        <div class="body-gallery">
-            <button class="left">
-                <span class="fa fa-chevron-left"></span>
-            </button>
-            <ul id="body-gallery-merchandise" class="slider gal">
-                <li id="li-0">
-                </li>
-                <li id="li-1">
-                </li>
-                <li id="li-2">
-                </li>
-                <li id="li-3">
-                </li>
-            </ul>
-            <button class="right">
-                <span class="fa fa-chevron-right"></span>
-            </button>
-        </div>
-        <div class="footer-gallery">
-            <ol class="pagination">
-            </ol>
+    <section id="galery" class="section-gallery">       
+        <div class="list-merchandise">
+            <div class="container-gallery">
+                <button class="left">
+                    <span class="fa fa-chevron-left"></span>
+                </button>   
+                <section id="body-merchandise" class="body-merchandise">
+                </section>   
+                <button class="right">
+                    <span class="fa fa-chevron-right"></span>
+                </button>  
+            </div>
+            <div class="body-footer">                                               
+                <ol id="pag-items" class="pagination">                                      
+                </ol>               
+            </div>
         </div>
     </section>
 
-    <section id="comanda" class="section-command">
-        <div class="command-container">
-            <div id="mapa" class="body-command-container">
+    <section id="about" class="section-mapa">
+        <div class="mapa-container">
+            <div id="mapa" class="body-mapa-container">
             </div>
             <div class="body-location-container">             
                 <div class="opening-hours">

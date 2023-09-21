@@ -15,11 +15,11 @@ export const letter_Merchandise = (Merchandise) => {
 
 export const modal_Gallery = (Merchandise) => {
     return`   
-    <article class="modal-info">
-        <section class="modal-header">
+    <div class="modal-info">
+        <div class="modal-header">
             <p class="modal-title">${Merchandise.strCategory} > ${Merchandise.strDrink}</p>
             <span class="material-symbols-outlined close">close</span>	
-        </section>
+        </div>
         <section class="modal-body">
             <article class="article-one">            
                 <h1>${Merchandise.strDrink}</h1>         
@@ -36,7 +36,7 @@ export const modal_Gallery = (Merchandise) => {
                 </div>          
             </article>
         </section>
-    </article>`
+    </div>`
 }
 
 

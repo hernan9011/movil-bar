@@ -1,5 +1,5 @@
-/*sección comanda*/
-.section-command {
+/*sección mapa*/
+.section-mapa {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +10,7 @@
   background-color: #ffffff;
 }
 
-.command-container {
+.mapa-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 80%;
@@ -18,30 +18,12 @@
   overflow: hidden;
 }
 
-.body-command-container {
+.body-mapa-container {
   display: flex;
   flex-direction: column;
   border: 1px solid #ddd;
   overflow-y: auto;
   overflow-x: hidden;
-}
-
-.header-command {
-  height: 15%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
-}
-
-.body-command {
-  display: flex;
-  flex-direction: column;
-  height: 80%;
-  padding: 10px;
-  background-color: #fff;
-  overflow-y: scroll;
-  gap: 5px;
 }
 
 .body-location-container {
@@ -52,25 +34,17 @@
   overflow: hidden;
 }
 
-.letter-command-today {
-  display: flex;
-  flex-direction: column;
-  height: min-content;
-  max-height: 700px;
-  padding: 0.5em;
-  border-radius: 10px;
-  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75);
-}
-
 .img-ubi {
   height: 100%;
   overflow: hidden;
 }
+
 .opening-hours {
   display: flex;
   flex-direction: column;
   width: 90%;
 }
+
 .opening-hours h2 {
   font-size: 2.5em;
   margin: 0;
@@ -84,14 +58,17 @@
   display: flex;
   justify-content: space-between;
 }
+
 .hours-col {
   flex-basis: calc(60% - 20px);
   color: #000;
 }
+
 .items {
   display: flex;
   justify-content: space-between;
 }
+
 
 /*sección Footer*/
 .section-footer {
@@ -118,6 +95,7 @@
   padding: 0.5em;
   font-size: 20px;
 }
+
 .grupo-1 .red-social a {
   display: inline-block;
   width: 50px;
@@ -129,6 +107,7 @@
   color: #fff;
   text-align: center;
 }
+
 .section-footer .grupo-2 {
   background-color: #000;
   padding: 15px 10px;
@@ -139,6 +118,7 @@
 .section-footer .grupo-2 small {
   font-size: 15px;
 }
+
 .footer-logo {
   width: 100px;
   height: 50%;
@@ -166,6 +146,8 @@
   font-weight: bold;
   color: #fff;
 }
+
+
 
 /*sección home*/
 .section-home {
