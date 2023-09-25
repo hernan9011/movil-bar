@@ -10,6 +10,7 @@ async function renderMerchandise(name) {
         }
         const Merchandise = await response.json();
         $('#body-merchandise').empty();
+        console.log($('#body-merchandise').empty());
         for (let i = 0; i < Math.ceil(Merchandise.drinks.length / 9); i++) {
             const divMayor = $('<ul>').attr('id', `pag-${i}`).addClass('slider-one');
             $('#body-merchandise').append(divMayor);

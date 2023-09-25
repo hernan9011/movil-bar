@@ -1,6 +1,5 @@
 .nav-top {
     position: fixed;
-    flex-direction: column;
     width: 100%;
     z-index: 2;
     top: 0;
@@ -12,10 +11,11 @@
 
 .nav-bar {
     display: flex;
+    flex-direction: row;
     align-items:center;
     position: relative;
     overflow: hidden;
-    height: 70px;
+    height: auto;
 }
 
 .nav-button {
@@ -28,9 +28,9 @@
 }
 
 .nav-logo {
-    position: absolute;
-    height: auto;
-    background-size: cover;
+    position: relative;
+    height: 100px;
+    background-size:contain;
     background-position: center;
     background-repeat: no-repeat;
     margin-left: 0.5em;
@@ -42,7 +42,6 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    flex-grow: 3;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -111,6 +110,45 @@ a:hover {
     .btn-search {
         width: 20% !important;
     }
+
+    .nav-bar {
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: space-between;
+        overflow: visible;
+        position: relative;
+        height: auto;
+    }
+
+    .input-search {
+        width: 70%;
+        height: 60%;
+        font-weight: bold;
+        color: #000;
+        font-size: 1.3em;
+        font-family: inherit;
+        line-height: inherit;
+    }
+
+    .nav-ul{
+
+        padding-top: 20px;
+        padding-bottom: 10px;
   }
 
+    .nav-button{
+        border-radius: 10px;
+    }
 
+    #bebidaRandom{
+
+        margin-top: 100px;
+        font-size: medium;
+    }
+
+    #btn-home{
+
+        text-size-adjust:initial;
+    }
+}

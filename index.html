@@ -20,6 +20,7 @@
     <script defer src="../js/home.js"></script>
     <script defer type="module" src="../js/gallery.js"></script>  
     <script defer type="module" src="../js/storage.js"></script>
+    <script defer type="module" src="../js/random.js"></script>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?"></script>
   
 
@@ -28,23 +29,27 @@
 <body>
     <header class="nav-top ">
         <nav class="nav-bar">
-            <a href="/index.html" class="nav-logo">LOGO</a>
+            <img src="img/logobebidas.jpg" href="/index.html" class="nav-logo">
             <div class="nav-search">
-                <input id="input-search" class="input-search" type="text" placeholder="Nombre de tu bebida favorita">
-                <button id="btn-search" class="btn-c btn-search">Buscar</button>  
+                <input id="input-search" class="input-search" type="text" placeholder="Name of your favourite drink">
+                <button id="btn-search" class="btn-c btn-search">Search</button>  
             </div>
             <ul class="nav-ul">
-                <li><a href="#galery" class="nav-button">GALERÍA</a></li>
-                <li><a href="#about" class="nav-button">MAPA</a></li>
-                <li><a href="#contacto" class="nav-button">CONTACTO</a></li>
+                <li><a href="#galery" class="nav-button">GALLERY</a></li>
+                <li><a href="#about" class="nav-button">MAP</a></li>
+                <li><a href="#contacto" class="nav-button">CONTACT</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="section-home">
         <div id="image" class="body-home">
-            <a href="/search.html" class="btn-home">Buscar</a>
+            <div id="bebidaRandom" class="body-home">
+
+            </div>
+            <a href="/search.html" class="btn-home">DRINKS LIST</a>
         </div>
+        
     </section>
 
     <section id="galery" class="section-gallery">       
@@ -93,7 +98,7 @@
 
     <footer id="contacto" class="section-footer">          
         <article class="grupo-1">
-            <h2>Síguenos</h2> 
+            <h2>Follow Us</h2> 
             <div class="red-social">
                 <a href="https://www.linkedin.com/in/hern%C3%A1n-rodriguez-455573244/" class="fa fa-linkedin" target="_blank" aria-hidden="true"></a>       
                 <a href="https://www.instagram.com/hernankkw/" class="fa fa-instagram" target="_blank" aria-hidden="true"></a>                       
@@ -101,13 +106,13 @@
                 <a href="https://github.com/hernan9011" class="fa fa-github" target="_blank" aria-hidden="true"></a>
             </div> 
             <ul class="footer-politics">
-                <li><a href="/aviso-legal">Aviso legal</a></li>
-                <li><a href="/politica-de-privacidad">Política de privacidad</a></li>
-                <li><a href="/politica-de-cookies">Política de cookies</a></li>
+                <li><a href="/aviso-legal">Legal advise</a></li>
+                <li><a href="/politica-de-privacidad">Privacy Policy</a></li>
+                <li><a href="/politica-de-cookies">Cookies Policy</a></li>
             </ul>           
         </article >       
         <article  class="grupo-2">
-            <small>© 2023 <b>Hernan Rodriguez</b> - Todos los Derechos Reservados.</small>
+            <small>© 2023 <b>Hernan Rodriguez</b> - <b>Emmanuel Righi</b>.</small>
         </article >
     </footer>
 
