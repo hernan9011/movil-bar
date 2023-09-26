@@ -74,6 +74,7 @@ function NumeroDePag() {
 
     $('.slider-one').hide();
     $('.slider-one:first').show();
+    $('.pagination li').css({ 'color': '#858585' });
     $('.pagination li:first').css({ 'color': '#CD6E2E' });
     $('.pagination li').click(pagination);
     $('.right span').click(nextSlider);
