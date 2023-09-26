@@ -1,17 +1,22 @@
+import { letter_randomMerchandise } from "../js/export-bar.js";
 
-window.onload = () => {
-    // Variables
-    const IMAGES = ['../img/bebidas-refrescantes.jpg'];
-    const image = document.querySelector('#image');
-  
-    function renderImage() {
-        image.style.backgroundImage = `url(${IMAGES[0]})`;
+async function renderRandomMerchandise() {
+    try {
+        const API_URL = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
+        const response = await fetch(`${API_URL}`, { method: 'GET' });
+        const midiv = $('#bebidaRandom');
+
+        if (!response.ok) {
+            throw new Error('Error obtaining Merchandise');
+        }
+
+        const RandomMerchandise = await response.json();
+        const trago = RandomMerchandise.drinks[0];
+        midiv.append(letter_randomMerchandise(trago));
+        document.querySelector('#image').style.backgroundImage = `url(${trago.strDrinkThumb})`;
+    } catch (error) {
+        console.error(error.message);
     }
+}
 
-    document.getElementById("btn-search").addEventListener('click', () => {
-        location.href ="../../search.html";
-        const name = document.getElementById("input-search").value;      
-        localStorage.setItem("search", name);
-    });
-    renderImage();
-} 
+renderRandomMerchandise();
