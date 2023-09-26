@@ -59,7 +59,9 @@ export const letter_History = (Merchandise) => {
 
 export const letter_randomMerchandise = (Merchandise) => {
     return `                         
-        <div class =flex-column" style="background-color: rgba(0,0,0,.5);color:white">
+        <div class ="flex-columnn">
+            <h3 class="text-merchandise">TRAGO RECOMENDADO</h4>
+            <br></br> 
             <h5 class="text-merchandise">${Merchandise.strDrink} </h5>                                                      
             <p class="desc-merchandise" style="color:white">Category: ${Merchandise.strCategory}</p>             
             <p class="desc-merchandise" style="color:white">Preparation: ${Merchandise.strInstructions} </p>    

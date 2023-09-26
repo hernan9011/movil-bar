@@ -97,6 +97,19 @@ a:hover {
     width: 12% !important;
 }
 
+.flex-columnn {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    gap: 5px;
+    background-color: rgba(0,0,0,.8);
+    color:white;
+    width: 80%;
+    margin-top: 100px;
+  }
+
 
 
 
@@ -147,8 +160,31 @@ a:hover {
         font-size: medium;
     }
 
-    #btn-home{
+    .section-mapa {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center;
+        justify-content: center; */
+        height: auto;
+        padding: 2em;
+        background-color: #ffffff;
+      }
+      
+      .mapa-container {
 
-        text-size-adjust:initial;
-    }
+        flex-direction:row;
+        
+        
+      }
+      
+      /* .body-mapa-container {
+        display: block;
+        border: 1px solid #ddd;
+      } */
+      
+      .body-location-container {
+        align-items: center;
+        justify-content: center;
+        
+      }
 }
