@@ -214,3 +214,13 @@
   color: #ffa600;
   background-color: #000;
 }
+
+
+@media (max-width: 459px ){
+
+  .btn-home{
+  
+    height: 20px;
+    padding-top: 0em;
+  }
+}
