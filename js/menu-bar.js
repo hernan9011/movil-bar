@@ -15,7 +15,7 @@ async function renderMerchandise(name) {
             $('#body-merchandise').append(divMayor);
             for (let itemCount = i * 9; itemCount < Math.min(i * 9 + 9, Merchandise.drinks.length); itemCount++) {
                 const Merchandise2 = Merchandise.drinks[itemCount];
-                const letter = $('<li>').attr('id', `Merchandise-${Merchandise2.idDrink}`).addClass('letter-merchandise');
+                const letter = $('<li>').attr('id', `Merchandise-${Merchandise2.idDrink}`);
                 letter.html(letter_Merchandise(Merchandise2));
                 divMayor.append(letter);
                 addEvento(Merchandise2.idDrink);

@@ -1,16 +1,18 @@
 export const letter_Merchandise = (Merchandise) => {
     return ` 
-    <div class="img-merchandise" style="background-image: url(${Merchandise.strDrinkThumb});">                        
-        <div style="filter:drop-shadow(black 2px 4px 6px);backdrop-filter: blur(1px);">
-            <h5 class="text-merchandise">${Merchandise.strDrink} </h5>
+    <article class="letter-merchandise" >
+        <div class="img-merchandise" style="background-image: url(${Merchandise.strDrinkThumb});">                        
+            <div style="filter:drop-shadow(black 2px 4px 6px);backdrop-filter: blur(1px);">
+                <h5 class="text-merchandise">${Merchandise.strDrink} </h5>
+            </div>
         </div>
-    </div>
-    <div class="flex-column">                                                                                                                         
-        <button id="button-info-${Merchandise.idDrink}" 
-        class="btn-c btn-info" value="${Merchandise.idDrink}" >Información</button>             
-        <button id="button-${Merchandise.idDrink}" 
-        class="btn-c" value="${Merchandise.idDrink}">Añadir a Favorito</button>    
-    </div>`
+        <div class="flex-column">                                                                                                                         
+            <button id="button-info-${Merchandise.idDrink}" 
+            class="btn-c btn-info" value="${Merchandise.idDrink}" >Información</button>             
+            <button id="button-${Merchandise.idDrink}" 
+            class="btn-c" value="${Merchandise.idDrink}">Añadir a Favorito</button>    
+        </div>
+    </article>`
 }
 
 export const modal_Gallery = (Merchandise) => {
