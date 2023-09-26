@@ -31,14 +31,15 @@
 .nav-logo {
     position: absolute;
     height: 52px;
-    width: 120px;
-    background-size: cover;
+    width: 100px;
+    background-image: url("../img/logo-1.jpg");
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    margin-left: 0.5em;
-    font-size: 2.5em;
+    margin-left: 1em;
     text-decoration: none;
 }
+
 
 .nav-ul {
     display: flex;

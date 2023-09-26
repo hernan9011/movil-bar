@@ -121,6 +121,7 @@
   padding: 1em;
   gap: 5px;
   background-color: #fff;
+  list-style: none;
 }
 
 .body-footer{

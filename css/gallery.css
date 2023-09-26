@@ -117,6 +117,7 @@
     overflow: hidden;
     padding: 1em;
     gap: 5px;
+    list-style: none;
   }
   
   .body-footer{
