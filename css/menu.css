@@ -169,7 +169,6 @@
 
 .public {
   display: flex;
-  background-color: aqua;
   height: 20%;
   justify-content: center;
   align-items: center;
@@ -177,7 +176,11 @@
   padding: 1em;
 }
 
-
+.public img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
 
 @media (min-width: 741px) and (max-width: 1224px) {
   /* Estilos para tabletas */
