@@ -12,7 +12,7 @@
 .nav-bar {
     display: flex;
     flex-direction: row;
-    align-items:center;
+    align-items: center;
     position: relative;
     overflow: hidden;
     min-height: 60px;
@@ -24,8 +24,8 @@
     border: none;
     outline: 0;
     height: 100%;
-    
-    
+
+
 }
 
 .nav-logo {
@@ -100,23 +100,9 @@ a:hover {
     width: 12% !important;
 }
 
-.flex-columnn {
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 10px;
-    gap: 5px;
-    background-color: rgba(0,0,0,.8);
-    color:white;
-    width: 90%;
-    margin-top: 100px;
-  }
 
+@media (max-width: 609px) and (min-width: 30px) {
 
-
-
-@media (max-width: 459px) and (min-width: 30px) {
     /* Estilos para dispositivos móviles */
     .nav-search {
         justify-content: end;
@@ -130,7 +116,7 @@ a:hover {
     .nav-bar {
         display: flex;
         flex-direction: column;
-        align-items:center;
+        align-items: center;
         justify-content: space-between;
         overflow: visible;
         position: relative;
@@ -147,60 +133,12 @@ a:hover {
         line-height: inherit;
     }
 
-    .nav-ul{
-
+    .nav-ul {
         padding-top: 20px;
         padding-bottom: 10px;
-  }
+    }
 
-    .nav-button{
+    .nav-button {
         border-radius: 10px;
     }
-
-    #bebidaRandom{
-
-        margin-top: 100px;
-        font-size: medium;
-    }
-
-    .section-mapa {
-        display: flex;
-        flex-direction: column;
-        /* align-items: center;
-        justify-content: center; */
-        height: auto;
-        padding: 2em;
-        background-color: #ffffff;
-      }
-      
-      .mapa-container {
-
-        flex-direction:row;
-        
-        
-      }
-      
-      /* .body-mapa-container {
-        display: block;
-        border: 1px solid #ddd;
-      } */
-      
-      .body-location-container {
-        align-items: center;
-        justify-content: center;
-        
-      }
-
-      .flex-columnn{
-
-        height: 60%;
-      }
-
-      .desc-merchandise{
-        padding: 10px 10px;
-        overflow-y:auto;
-        height: auto;
-        text-overflow: ellipsis;
-      }
-
 }

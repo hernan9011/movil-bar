@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: min-content;
   padding: 2em;
   overflow: hidden;
   background-color: #ffffff;
@@ -21,6 +21,8 @@
 .body-mapa-container {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 100%;
   border: 1px solid #ddd;
   overflow-y: auto;
   overflow-x: hidden;
@@ -29,6 +31,8 @@
 .body-location-container {
   display: flex;
   flex-direction: row;
+  height: 100%;
+  width: 100%;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -154,31 +158,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
-}
-
-.prev,
-.next {
-  position: absolute;
-  transform: translateY(-50%);
-  background-color: transparent;
-  border: none;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-.prev {
-  left: 2rem;
-}
-
-.next {
-  right: 2rem;
-}
-
-.img-photo{
-  height: 70%;
-  filter: drop-shadow(2px 4px 6px black);
+  height: 80vh;
+  margin-top: 60px;
 }
 
 .body-home {
@@ -190,12 +171,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
-  color: #fff;
+  gap: 10px;
 }
 
-.btn-home{
-  
+.body-home-text{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  gap:1em;
+}
+
+.btn-home{ 
   padding: 0.5em 1.5em;
   text-decoration: none;
   font-weight: bold;
@@ -206,8 +195,9 @@
   background-color: #ffa600;
   border-color: #ffa600;
   border-radius: 10px;
-  width: 30%;
+  width: 20%;
   text-align: center;
+  font-size: 1.1em;
 }
 
 .btn-home:hover {
@@ -215,12 +205,69 @@
   background-color: #000;
 }
 
+.flex-columnn {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  gap: 5px;
+  background-color: rgba(0, 0, 0, .8);
+  color: white;
+  width: 90%;
+  overflow-y: auto;
+  padding: 0.5em;
+  font-size: 1.5em;
+}
+
+.flex-columnn  p{
+  color: white;
+}
+
+.flex-columnn  h1{
+  color: white;
+  margin: 0;
+  font-size: 1.8em;
+}
+
+.flex-columnn  h2{
+  color: white;
+  margin: 0;
+  font-size: 1.8em;
+}
+
+
+
+
+
+@media (max-width: 609px ){
+
+  /*sección home*/
+.section-home {
+  margin-top: 150px;
+}
+  .btn-home{
+    font-size: 0.9em;
+  }
+
+  .flex-columnn {
+    font-size: 0.9em;
+  }
+
+}
+
+@media (max-width: 809px ){
+
+  .mapa-container {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+}
 
 @media (max-width: 459px ){
-
-  .btn-home{
-  
-    height: 20px;
-    padding-top: 0em;
+  .mapa-container {
+    height: 100%;
+    width: 100%;
   }
+
 }
