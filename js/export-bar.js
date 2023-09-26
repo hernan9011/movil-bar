@@ -64,7 +64,7 @@ export const letter_randomMerchandise = (Merchandise) => {
         <div class ="flex-columnn">
             <h3 class="text-merchandise">RECOMMENDED DRINK</h4>
             <h5 class="text-merchandise">${Merchandise.strDrink} </h5>                                                      
-            <p class="desc-merchandise" style="color:white">Category: ${Merchandise.strCategory}</p>             
+            <p class="desc-merchandisee" style="color:white">Category: ${Merchandise.strCategory}</p>             
             <p class="desc-merchandise" style="color:white">Preparation: ${Merchandise.strInstructions} </p>    
     </div>`
 }

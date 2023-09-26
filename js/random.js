@@ -14,7 +14,7 @@ async function renderRandomMerchandise() {
 
         const RandomMerchandise = await response.json();
         console.log(RandomMerchandise);
-        const trago = RandomMerchandise.drinks[0];
+        let trago = RandomMerchandise.drinks[0];
         console.log(trago);
         
         midiv.append(letter_randomMerchandise(trago));
