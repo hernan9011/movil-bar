@@ -12,7 +12,7 @@ async function renderRandomMerchandise() {
 
         const RandomMerchandise = await response.json();
         const trago = RandomMerchandise.drinks[0];
-        midiv.append(letter_randomMerchandise(trago));
+        midiv.prepend(letter_randomMerchandise(trago));
         document.querySelector('#image').style.backgroundImage = `url(${trago.strDrinkThumb})`;
     } catch (error) {
         console.error(error.message);
