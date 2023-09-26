@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Abrir el cliente de correo electrónico predeterminado
       //window.location.href = mailtoLink;
-      window.location.href = mailtoLink;
+      //window.location.href = mailtoLink;
+      window.open(mailtoLink,'_blank');
     });
 })

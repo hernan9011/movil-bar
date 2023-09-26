@@ -21,6 +21,14 @@
     margin-bottom: 30px;
 }
 
+.form-group-a{
+    display: block;
+    margin-bottom: 30px;
+    text-align: center;
+    
+
+}
+
 label {
     display: block;
     font-weight: bold;
@@ -36,7 +44,7 @@ textarea {
     border-radius: 4px;
 }
 
-button[type="submit"] {
+#boton-subir{
     background-color: #fda502;
     color: #fff;
     border: none;
@@ -44,10 +52,12 @@ button[type="submit"] {
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
-    width: 100%;
+    display: block;
+    width: auto;
+    
 }
 
-button[type="submit"]:hover {
+#boton-subir:hover {
     background-color: #080801;
 }
 
@@ -57,4 +67,9 @@ button[type="submit"]:hover {
         padding: 10px;
     }
 
+    #boton-subir{
+
+        width: 80%;
+
+    }
 }
