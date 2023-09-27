@@ -75,9 +75,6 @@ a:hover {
     background-color: #ffa600;
 }
 
-
-
-
 .nav-search {
     display: flex;
     width: 100%;
@@ -102,16 +99,30 @@ a:hover {
 
 
 
-@media (max-width: 459px) and (min-width: 30px) {
+@media (max-width: 700px) {
     /* Estilos para dispositivos móviles */
     .nav-search {
         justify-content: end;
         margin-right: 1em;
     }
-
     .btn-search {
         width: 20% !important;
     }
-  }
+}
 
+@media (max-width: 450px) {
+    /* Estilos para dispositivos móviles */
+    .nav-logo {
+        height: 52px;
+        width: 80px;
+    }
+
+    .nav-search {
+        justify-content: end;
+        margin-right: 1em;
+    }
+    .btn-search {
+        width: 20% !important;
+    }
+}
 
