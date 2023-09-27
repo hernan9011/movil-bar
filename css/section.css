@@ -55,12 +55,6 @@
 }
 
 
-.items {
-  display: flex;
-  justify-content: space-between;
-}
-
-
 /*sección Footer*/
 .section-footer {
   width: 100%;
@@ -158,7 +152,6 @@
   width: 100%;
   height: 95%;
   max-width: 800px;
-  background-color: #fff;
 }
 
 .contact-form{
@@ -174,6 +167,7 @@
   text-align: center;
   font-size: 2.5em;
   margin: 0;
+  color: #fff;
 }
 
 .form-group {
@@ -181,6 +175,7 @@
   width: 90%;
   font-size: 1.6em;
   font-weight: bold;
+  color: #fff;
 }
 
 #name,#email,textarea {
@@ -204,11 +199,13 @@
   padding: 10px 20px;
   cursor: pointer;
   font-size: 1.6em;
+  font-weight: bold;
   border: none;
 }
 
 #boton-subir:hover {
-  background-color: #080801;
+  background-color: #fff;
+  color: #000;
 }
 
 
